@@ -1,6 +1,6 @@
 import { PlotList } from "../components/plot/list";
 import { getAllPlots, IPlotDB } from "../lib/api/plots";
-import { GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 
 export interface IPlot {
   id: string;
@@ -15,7 +15,7 @@ export default function Home({ plots }: { plots: IPlot[] }) {
   return <PlotList plots={plots} />;
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   const plots = (await getAllPlots()).map((plot) => {
     const json = JSON.parse(plot.data);
     return {
@@ -32,6 +32,5 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       plots,
     },
-    revalidate: 10,
   };
 };
