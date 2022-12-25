@@ -5,14 +5,14 @@ const Plot = dynamic(() => import("react-plotly.js"), { ssr: false });
 import { IPlot } from "../../pages";
 
 const PlotItem = ({ plot }: { plot: IPlot }) => {
-  const {data, layout, frames} = plot;
+  const { data, layout, frames } = plot;
 
   return (
     <Box>
       <ListItemText primary={plot.name} secondary={`${plot.createdAt}`} />
       {data && layout && (
         <Box>
-          <Plot data={data} layout={layout}  frames={frames} />
+          <Plot data={data} layout={layout} frames={frames} />
         </Box>
       )}
       <Divider />
@@ -27,7 +27,7 @@ export const PlotList = ({ plots }: { plots: IPlot[] }) => {
         <Typography variant="h4">Plotly chart Test</Typography>
 
         <Divider />
-        
+
         <Stack pt={1}>
           <Typography variant="body1">It is testing this scenario.</Typography>
           <Typography variant="caption">
@@ -37,10 +37,14 @@ export const PlotList = ({ plots }: { plots: IPlot[] }) => {
             2. Export chart data as json, and server save it.
           </Typography>
           <Typography variant="caption">
-            3. Render chart data with <a href="https://github.com/plotly/plotly.js" target="blank">plotly.js</a> on web page(This page)
+            3. Render chart data with{" "}
+            <a href="https://github.com/plotly/plotly.js" target="blank">
+              plotly.js
+            </a>{" "}
+            on web page(This page)
           </Typography>
           <Typography variant="caption">
-            => Check both charts are same
+            4. Check both charts are same
           </Typography>
         </Stack>
       </Box>
