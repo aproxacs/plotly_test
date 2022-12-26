@@ -31,14 +31,20 @@ export const PlotList = ({ plots }: { plots: IPlot[] }) => {
         <Stack pt={1}>
           <Typography variant="body1">It is testing this scenario.</Typography>
           <Typography variant="caption">
-            1. Create a chart with plotly on python notebook.
+            1. Create a chart with plotly on{" "}
+            <a
+              href="https://github.com/aproxacs/plotly_test/blob/main/docs/chart_samples.ipynb"
+              target="_blank"
+            >
+              python notebook
+            </a>
           </Typography>
           <Typography variant="caption">
             2. Export chart data as json, and server save it.
           </Typography>
           <Typography variant="caption">
             3. Render chart data with{" "}
-            <a href="https://github.com/plotly/plotly.js" target="blank">
+            <a href="https://github.com/plotly/plotly.js" target="_blank">
               plotly.js
             </a>{" "}
             on web page(This page)
