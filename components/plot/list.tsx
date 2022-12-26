@@ -35,6 +35,7 @@ export const PlotList = ({ plots }: { plots: IPlot[] }) => {
             <a
               href="https://github.com/aproxacs/plotly_test/blob/main/docs/chart_samples.ipynb"
               target="_blank"
+              rel="noreferrer"
             >
               python notebook
             </a>
@@ -44,7 +45,11 @@ export const PlotList = ({ plots }: { plots: IPlot[] }) => {
           </Typography>
           <Typography variant="caption">
             3. Render chart data with{" "}
-            <a href="https://github.com/plotly/plotly.js" target="_blank">
+            <a
+              href="https://github.com/plotly/plotly.js"
+              target="_blank"
+              rel="noreferrer"
+            >
               plotly.js
             </a>{" "}
             on web page(This page)
